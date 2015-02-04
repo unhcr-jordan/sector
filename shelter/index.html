@@ -245,31 +245,36 @@
                                 <b>Leading Agencies: UNHCR - Mohamed Abdel-Al, <a href="mailto:abdelal@unhcr.org">abdelal@unhcr.org</a>; NRC - Annika Hampson, <a href="mailto:annika.hampson@nrc.no">annika.hampson@nrc.no</a></b>
                             </p>
                         </div>
+                        <p>The units displayed here corresponds to "Assistance Instance". As such totals presented here shoudl be understood with caution. </p>
                 </div>
                 <div class="col-md-4">
                     <div class="col-md-5">
                         <br>
-                        <div class="dc-chart" id="count-info" data-step="12" data-intro="Click on this button to clear all the filters." data-position="right"><strong><span class="filter-count ">4,043</span></strong> selected out of <span class="total-count ">4,043</span> records</div>
+                        <div class="dc-chart" id="count-info" data-step="12" data-intro="Click on this button to clear all the filters." data-position="right">
+                            <div style="color: #000000">
+                                <strong><span class="filter-count " ></span></strong> selected out of <span class="total-count "></span> records</div>
+                            </div>
                         <a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll();dc.redrawAll();">Reset All</a>
                         <br>
                         <a class="btn btn btn-success" href="javascript:void(0);" onclick="javascript:introJs().start();">Tutorial</a><br >
                     </div>
                     <br>
                     <div class="col-md-3">
-                    <div class="socialmedia" data-step="11" data-intro="Feel Free to share if you like it!" data-position="left">
-                        <table>
-                          <tbody><tr>
-                            <td valign="middle"><a href="http://www.facebook.com/sharer.php?u=http://data.unhcr.org/jordan/sectors/shelter" target="_blank">
-                                <img src="../img/Facebook.png" style="height: 25px; width: 25px"></a></td>
-                            <td valign="middle"><a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fdata.unhcr.org/jordan/sectors/shelter&amp;media=http%3A%2F%2Fdata.unhcr.org/jordan/images/shelterdashboard.jpg" target="_blank" data-pin-do="buttonBookmark">
-                                <img src="../img/Pinterest.png" style="height: 28px; width: 28px"></a></td>
-                            <td valign="middle"><a href="https://twitter.com/intent/tweet?url=http://data.unhcr.org/jordan/sectors/shelter&amp;text=%23jordan%20@Refugees" target="_blank">
-                                <img src="../img/Twitter.png" style="height: 25px; width: 25px"></a></td>
-                            <td valign="middle"><a href="https://plus.google.com/share?&amp;hl=en&amp;url=http://data.unhcr.org/jordan/sectors/shelter" target="_blank">
-                                <img src="../img/Google.png" style="height: 25px; width: 25px"></a></td>
-                        </tr>
-                        </tbody></table>
-                    </div>
+                        <div class="socialmedia" data-step="11" data-intro="Feel Free to share if you like it!" data-position="left">
+                            <table width = "100%">
+                              <tbody>
+                                  <tr>
+                                    <td valign="middle"><a href="http://www.facebook.com/sharer.php?u=http://data.unhcr.org/jordan/sectors/shelter" target="_blank">
+                                        <img src="../img/Facebook.png" style="height: 25px; width: 25px"></a></td>
+                                    <td valign="middle"><a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fdata.unhcr.org/jordan/sectors/shelter&amp;media=http%3A%2F%2Fdata.unhcr.org/jordan/images/shelterdashboard.jpg" target="_blank" data-pin-do="buttonBookmark">
+                                        <img src="../img/Pinterest.png" style="height: 28px; width: 28px"></a></td>
+                                    <td valign="middle"><a href="https://twitter.com/intent/tweet?url=http://data.unhcr.org/jordan/sectors/shelter&amp;text=%23jordan%20@Refugees" target="_blank">
+                                        <img src="../img/Twitter.png" style="height: 25px; width: 25px"></a></td>
+                                    <td valign="middle"><a href="https://plus.google.com/share?&amp;hl=en&amp;url=http://data.unhcr.org/jordan/sectors/shelter" target="_blank">
+                                        <img src="../img/Google.png" style="height: 25px; width: 25px"></a></td>
+                                  </tr>
+                            </tbody></table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -334,21 +339,18 @@
                 </div>
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-6" data-intro="Click anywhere on the map to filter the results. The camp icon filters activities for camp only and the small jordan map filters country-wide activities" data-position="left" data-step="7" >
-                           <!-- <div id="map">
-                                <h5><strong>Geographic filter : <a href="javascript:governoratesMapShow();">Governorates</a> -or- Regions</strong><br >
-                                <small>Some activities are country-wide or for camps only.</smalll></h5>
-                            </div>
-                            -->
-                            <div id="map2">
-                                <h5><strong>Geographic filter : Governorates <!---or- <a href="javascript:regionsMapShow();">Regions</a>--></strong><br >
+                        <div class="col-md-6" 
+                        data-intro="Click anywhere on the map to filter the results. The camp icon filters activities for camp only and the small jordan map filters country-wide activities" data-position="left" data-step="7" >
+                            <div id="map">
+                                <h5><strong>Governorate </strong><br >
                                 <small>Some activities are country-wide or for camps only.</small></h5>
                             </div>
                         </div>
-                        <div class="col-md-6" data-intro="Click anywhere on the map to filter the results. The camp icon filters activities for camp only and the small jordan map filters country-wide activities" data-position="left" data-step="7" >
+                        <div class="col-md-6" 
+                        data-intro="Click anywhere on the map to filter the results. The camp icon filters activities for camp only and the small jordan map filters country-wide activities" data-position="left" data-step="8" >
                             <div id="region">
-                                <h5><strong>Geographic filter </strong><br >
-                                <small>Some activities are country-wide or for camps only.</smalll></h5>
+                                <h5><strong>Region</strong><br >
+                                <small>Some activities are country-wide or for camps only.</small></h5>
                             </div>
                         </div>
                     </div>
@@ -371,51 +373,6 @@
             <div class="row"  style="background-color: #D8D8D8;">
                 <iframe src="timeline.html" width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
             </div>
-            <!-- Replace by a timeline with Highlight and logos of reporting agencies per month
-
-              <div id="timeline-embed"></div>
-              <script type="text/javascript">
-                var timeline_config = {
-                 width: "100%",
-                 height: "100%",
-                 //link to google spreadhseet
-                 source: 'https://docs.google.com/spreadsheet/pub?key=0AjmnaOABaMIgdFRSS0k3QlN3SGkxeU5GZmRJOFRBQ1E&output=html'
-                }
-              </script>
-              <script type="text/javascript" src="../js/storyjs-embed.js"></script>-->
-              <!-- END Timeline Embed-->
-            <!--
-            <div class="row"  style="background-color: #D8D8D8;">
-                    &nbsp;
-                    <div class="col-xs-6" style="width: 93.81%; height: 29px">
-                        <center style="text-align: left">
-                            <span style="font-size: 12px">
-                                <span style="font-family: tahoma,geneva,sans-serif">
-                                 </span>
-                             </span>
-                        </center>
-                        <center style="text-align: left">
-                            <strong>
-                                <span style="font-size: 10px">
-                                    <span style="font-family: tahoma,geneva,sans-serif"> </span>
-                                </span>
-                            </strong>
-                        </center>
-                    </div>
-                    <div class="col-xs-6" style="width: 100%; height: 68px">
-                        <center style="text-align: left"><span style="font-size: 12px"><b>Reporting Agencies:</b><br />
-                            <span style="font-family: tahoma,geneva,sans-serif">
-                                <small>
-                                    <img border="0" height="23" src="../img/partner/unhcr.jpg" />
-                                    <img border="0" height="23" src="../img/partner/nrc.jpg" />
-                                    <img border="0" height="23" src="../img/partner/imc.jpg" />
-                                </small>
-                            </span>
-                            </span>
-                        </center>
-                    </div>
-            </div>
-            -->
 
             <div class="row" style="background-color: #ffc000; color: #00000">
                 <div class="col-md-12">
@@ -432,25 +389,6 @@
             <script type="text/javascript" src="../js/dc.js"></script>
             <script type="text/javascript" src="../js/d3.js"></script>
             <script>
-                /*
-                function regionsMapShow(){
-                   $('#map2').hide();
-                   $('#map').show();
-                   map2_chart.filterAll();
-                   dc.redrawAll();
-                }
-
-                function governoratesMapShow(){
-                   $('#map').hide();
-                   $('#map2').show();
-                map_chart.filterAll();
-                dc.redrawAll();
-                }
-                -->
-                $('#dashboard').hide();
-                $('#map').hide();
-                */
-
 
            //Prepare to load data
                 var dataset;
@@ -463,8 +401,7 @@
                 var partner_chart = dc.rowChart("#partner");
                 var month_chart = dc.lineChart("#month");
                 var monthrange_chart = dc.barChart("#monthrange");
-              //  var map_chart = dc.geoChoroplethChart("#map");
-                var map2_chart = dc.geoChoroplethChart("#map2");
+                var map_chart = dc.geoChoroplethChart("#map");
                 var region_chart = dc.bubbleOverlay("#region").svg(d3.select("#region svg"));
 
                 function getFiltersValues() {
@@ -475,7 +412,8 @@
                                        { name: 'appeal', value: appeal_chart.filters()},
                                        { name: 'partner', value: partner_chart.filters()},
                                        { name: 'allocation', value: allocation_chart.filters()},
-                                       { name: 'map2', value: map2_chart.filters()},
+                                       { name: 'monthrange', value: monthrange_chart.filters()},
+                                       { name: 'map', value: map_chart.filters()},
                                        { name: 'region', value: region_chart.filters()}
                                     ];
                        var recursiveEncoded = $.param( filters );
@@ -496,51 +434,39 @@
                            filter(indicator_chart, 1);
                            filter(gender_chart, 2);
                            filter(funded_chart, 3);
-                           filter(rrp6_chart, 4);
+                           filter(appeal_chart, 4);
                            filter(partner_chart, 5);
-                           filter(AllocationRRP6_chart, 6);
-                           filter(map_chart, 7);
-                           filter(map2_chart, 8);
+                           filter(allocation_chart, 6);
+                           filter(allocation_chart, 7);
+                           filter(map_chart, 8);
+                           filter(region_chart, 9);
                        }
                    }
 
-        //Prepare to load in GeoJSON data for background map
+        //GeoJSON data for background map
+        
                     var width = 360;
                     var height = 360;
-        //Create SVG element
                     var svg = d3.select("#region")
                                 .append("svg")
                                 .attr("width", width)
                                 .attr("height", height)
                                 .style("stroke-width", "0")
                                 .style("stroke", "grey");
-
-        //Load in GeoJSON data for area
                     d3.json("../data/region.geojson", function(json) {
-        // create a first guess for the projection
                         var center = d3.geo.centroid(json)
                         var scale  = 150;
                         var offset = [width/2, height/2];
                         var projection = d3.geo.mercator().scale(scale).center(center).translate(offset);
-        // create the path
                         var path = d3.geo.path().projection(projection);
-        // using the path determine the bounds of the current map and use these to determine better values for the scale and translation
                         var bounds  = path.bounds(json);
                         var hscale  = scale*(width) / (bounds[1][0] - bounds[0][0]);
                         var vscale  = scale*(height - 75)/ (bounds[1][1] - bounds[0][1]);
-        //in (height - 100), the - 100 is a specifically inserted to best a view the map. Otherwise the map will be a bit out of bound
                         var scale   = (hscale < vscale) ? hscale : vscale;
                         var offset  = [width - (bounds[0][0] + bounds[1][0])/2, height - (bounds[0][1] + bounds[1][1])/2];
-                        path.projection(d3.geo
-                                          .mercator()
-                                          .center([42,29.9])
-                                          .scale(3500)
-                                        )
-
-        // add a rectangle to see the bound of the svg
+                        path.projection(d3.geo.mercator().center([42,29.9]).scale(3500))
                         svg.append("rect").attr('width', width).attr('height', height).style('stroke', 'black').style('fill', 'none');
-                        svg.selectAll("path").data(json.features).enter().append("path").attr("d", path).style("fill", "white")
-                                             .style("stroke-width", "1").style("stroke", "black")
+                        svg.selectAll("path").data(json.features).enter().append("path").attr("d", path).style("fill", "white").style("stroke-width", "1").style("stroke", "black")
                     });
 
 
@@ -698,8 +624,8 @@
                         .point("North", 90, 176)
                         .point("Center", 190, 150)
                         .point("South", 175, 50)
-                        .point("Camp", 135, 90)
-                        .point("Countrywide", 60, 280)
+                        //.point("Camp", 135, 90)
+                       // .point("Countrywide", 60, 280)
                         .on("filtered", getFiltersValues)
                         .debug(true);
 
@@ -709,28 +635,30 @@
                        .group(all);
                                    
 
+                cf.region = cf.dimension(function(d) { return d.region; });
+                var region = cf.region.group();
+                
                 cf.gcode = cf.dimension(function (d) {return d.gcode;});
                 var gcode = cf.gcode.group();
+                var gcodeByTotal = cf.gcode.group().reduceSum(function (d) { return d.Value;} );
+                
                     /* Governorate map with ID adm1_code */
                            d3.json("../data/admin1.geojson", function (governJSON){
-                               map2_chart.width(400).height(300)
-                                   .dimension(cf.gcode)
-                                   .group(gcode)
-                                   .colors(['#AAAAAA', '#99A5B7'])
-                                   .colorDomain([0, 1])
+                               map_chart.width(400).height(300)
+                                   .dimension(gcode)
+                                   .group(gcodeByTotal)
+                                   .colors(d3.scale.quantize().range(["#FFFF80",   "#FCE96D", "#FCD75B", "#F7C348", "#F5AF36", "#E39529", "#C46D1B", "#A64C11", "#872A08", "#6B0000"]))
+                                   .colorDomain([0, 60000])
+                                   .colorCalculator(function (d) { return d ? map_chart.colors()(d) : '#ccc'; })
+                               //    .colors(['#AAAAAA', '#99A5B7'])
+                               //    .colorDomain([0, 1])
+                               //    .colorAccessor(function (d) { if(d>0){ return 1;} else { return 0; } })
                                    .on("filtered", getFiltersValues)
-                                   .colorAccessor(function (d) {
-                                           if(d>0){
-                                               return 1;
-                                           } else {
-                                               return 0;
-                                           }
-                                       })
                                    .overlayGeoJson(governJSON.features, "Governorates", function (d) { return d.properties.adm1_code;})
                                    .projection(d3.geo.mercator().center([42,29.9]).scale(3500)) // Center on Jordan
                                    .title(function (d) { return "Geo-Filter: " + gcode2gov[d.key]; });
 
-                                   $('#loading').hide();
+                                   
                                    dc.renderAll();
 
                                    /* Customised infobox */
@@ -740,10 +668,8 @@
                                    d3.selectAll(".pie-slice").call(pieTip);
                                    d3.selectAll(".pie-slice").on('mouseover', pieTip.show).on('mouseout', pieTip.hide);
                            });
-                      // });
-
-
-          // tooltips
+                           
+               // tooltips
                 var rowTip = d3.tip().attr('class', 'd3-tip').offset([-10, 0]).html(function (d) { return "<span style='color: #f0027f'>" +  d.key + "</span> : "  + numberFormat(d.value) + " Assistance Instance"; });
                 var pieTip = d3.tip().attr('class', 'd3-tip').offset([-10, 0]).html(function (d) { return "<span style='color: #f0027f'>" +  d.data.key + "</span> : "  + numberFormat(d.value) + " Assistance Instance"; });
                 var barTip = d3.tip().attr('class', 'd3-tip').offset([-10, 0]).html(function (d) { return "<span style='color: #f0027f'>" + d.data.key + "</span> : " + numberFormat(d.value) + " Assistance Instance";});
@@ -751,7 +677,6 @@
                 //var geoTip = d3.tip().attr('class', 'd3-tip').offset([-10, 0]).html(function (d) { return "<span style='color: #f0027f'>" + cazacode2caza[d.key] + "</span> : " + numberFormat(d.value) + " Individuals";});
 
 
-         //$('#loading').hide();
                    $('#dashboard').show();
                 }
                 });
