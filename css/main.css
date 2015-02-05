@@ -78,7 +78,7 @@ header{position:fixed;top:0;right:0;left:0;z-index:4;background:#fff;border-bott
 header.with-border{border-bottom:1px solid #ddd}
 .viewport{position:relative;margin-right:auto;margin-left:auto;padding-right:10px;padding-left:10px;max-width:1000px}
 header.active{-webkit-box-shadow:0 3px 10px rgba(0,0,0,0.25);-moz-box-shadow:0 3px 10px rgba(0,0,0,0.25);box-shadow:0 3px 10px rgba(0,0,0,0.25)}
-#logo{display:block;position:relative;top:13px;background:url("../images/coordination.png");width:48px;height:48px}
+#logo{display:block;position:relative;top:13px;background:url("../img/coordination.png");width:48px;height:48px}
 #logo:hover{background-position:left 0}
 #mininav{display:none;}
 #mininav button{cursor:pointer;position:absolute;top:19px;right:12px;outline:none;width:48px;height:45px;text-indent:-900em;background:transparent;border:0;}
@@ -99,22 +99,22 @@ header.active{-webkit-box-shadow:0 3px 10px rgba(0,0,0,0.25);-moz-box-shadow:0 3
 .firefox #nav a{position:relative;top:3px}
 #nav .badge{display:table-cell;position:relative;top:5px;left:-5px;border:1px solid #980010;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;background:linear-gradient(to bottom,#e66371 0%,#87000e 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#e66371),color-stop(100%,#87000e));background:-webkit-linear-gradient(top,#e66371 0%,#87000e 100%);background:-moz-linear-gradient(top,#e66371 0%,#87000e 100%);background:-o-linear-gradient(top,#e66371 0%,#87000e 100%);filter:Gradient(#e66371,#87000e);background:-ms-linear-gradient(top,#e66371 0%,#87000e 100%);width:24px;height:8px;text-align:center;vertical-align:middle;font:9px 'Avenir Next','Helvetica Neue',Helvetica,Arial,sans-serif;color:#fff}
 #nav #facebook,#nav #twitter,#nav #mail,#nav #youtube,#nav #github{text-indent:100%;white-space:nowrap;overflow:hidden;display:inline-block;top:6px;margin-left:15px;position:relative;right:0;margin:0 3px 0 0}
-#nav #facebook{margin-left:28px;background:url("../images/facebook.png");width:11px;height:23px}
-#nav #twitter{margin-left:28px;background:url("../images/twitter.png");width:26px;height:22px;top:7px}
-#nav #youtube{background:url("../images/youtube.png");margin-left:28px;width:32px;height:22px;top:7px}
-#nav #github{margin-left:28px;background:url("../images/github.png") no-repeat;width:25px;height:24px;top:7px}
-#nav #mail{margin-left:20px;background:url("../images/mail.png");width:22px;height:23px}
+#nav #facebook{margin-left:28px;background:url("../img/facebook.png");width:11px;height:23px}
+#nav #twitter{margin-left:28px;background:url("../img/twitter.png");width:26px;height:22px;top:7px}
+#nav #youtube{background:url("../img/youtube.png");margin-left:28px;width:32px;height:22px;top:7px}
+#nav #github{margin-left:28px;background:url("../img/github.png") no-repeat;width:25px;height:24px;top:7px}
+#nav #mail{margin-left:20px;background:url("../img/mail.png");width:22px;height:23px}
 #nav #facebook:hover,#nav #twitter:hover,#nav #mail.is-active,#nav #youtube:hover,#nav #github:hover{background-position:left bottom}
 #newsletter-signup{display:none;color:#fff;position:absolute;width:292px;background:transparent;z-index:5;right:206px;top:37px}
 #newsletter-signup .viewport{background:transparent;position:relative}
 #newsletter-signup .viewport div{background:#4f9656;position:relative;width:292px;padding:8px 6px}
 #newsletter-signup .viewport div:before{content:'';width:0;height:0;position:absolute;right:8px;top:-16px;border:8px solid;border-color:transparent transparent #4f9656 transparent}
-#newsletter-signup label{font-family:'Avenir Next Thin',sans-serif;background:url("./images/envelope.png") no-repeat 4px 1px;font-size:12px;padding-left:28px;margin-bottom:4px;display:block}
+#newsletter-signup label{font-family:'Avenir Next Thin',sans-serif;background:url("./img/envelope.png") no-repeat 4px 1px;font-size:12px;padding-left:28px;margin-bottom:4px;display:block}
 #newsletter-signup input[type=email]{background:#fff;border:0;padding:4px;height:18px;color:#ababab;width:222px;margin:0;margin-right:4px;float:left}
 #newsletter-signup input[type=email]:focus{outline-width:0}
 #newsletter-signup input[type=submit]{width:56px;background:#fefefe;border:0;color:#009643;font-weight:bold;padding:5px 4px;font-size:12px;cursor:pointer;padding:6 5px;margin:0;-webkit-box-shadow:0 0 0 rgba(0,0,0,0);box-shadow:0 0 0 rgba(0,0,0,0)}
 #newsletter-signup span{font-size:12px;margin-top:6px;display:block;font-family:'Avenir Next Thin',sans-serif;font-style:italic;text-align:center}
-.without-dot{background:url("../images/D-sans.png") !important}
+.without-dot{background:url("../img/D-sans.png") !important}
 #dot{position:absolute;top:43px;background:#348e4d;height:10px;left:0;-webkit-transition:all .5s ease-in-out;-moz-transition:all .5s ease-in-out;-ms-transition:all .5s ease-in-out;-o-transition:all .5s ease-in-out;transition:all .5s ease-in-out}
 .active#dot{background:#348e4d}
 .active #dot{top:43px;height:2px}
@@ -133,10 +133,10 @@ header.active{-webkit-box-shadow:0 3px 10px rgba(0,0,0,0.25);-moz-box-shadow:0 3
 .dropdown{position:absolute;top:75px;right:129px;line-height:normal;transform:scale(1.21);-webkit-transform:scale(1.21);-moz-transform:scale(1.21);-o-transform:scale(1.21);transform-origin:0 0;-webkit-transform-origin:0 0;-moz-transform-origin:0 0;-o-transform-origin:0 0;transition:box-shadow .2s ease-in;-webkit-transition:box-shadow .2s ease-in;-moz-transition:box-shadow .2s ease-in;-o-transition:box-shadow .2s ease-in;font-size:50%}
 .dropdown.active{box-shadow:0 0 12px 3px rgba(0,149,72,0.9);-webkit-box-shadow:0 0 12px 3px rgba(0,149,72,0.9);-moz-box-shadow:0 0 12px 3px rgba(0,149,72,0.9);filter:Shadow(0,3,#009548)}
 #list{margin-right:0 !important}
-#browser .arrow{display:none;position:absolute;left:-230px;margin-top:-20px;background:url("https://s3.amazonaws.com/images.disconnect.me/images/d2/harrow.png");width:200px;height:59px}
+#browser .arrow{display:none;position:absolute;left:-230px;margin-top:-20px;background:url("../img/harrow.png");width:200px;height:59px}
 .navbar-annotation .arrow{margin-top:-12px}
 .categories-annotation .arrow{top:41%}
-.dropdown.alt{display:none;position:absolute;top:75px;right:86px;box-shadow:-2px 3px 10px rgba(0,0,0,0.25);-webkit-box-shadow:-2px 3px 10px rgba(0,0,0,0.25);-moz-box-shadow:-2px 3px 10px rgba(0,0,0,0.25);filter:Shadow(315,10,#c0c0c0);border:1px solid #2b2b2b;background:url("https://s3.amazonaws.com/images.disconnect.me/images/d2/dropdown.png");width:242px;height:370px;transform:scale(1)}
+.dropdown.alt{display:none;position:absolute;top:75px;right:86px;box-shadow:-2px 3px 10px rgba(0,0,0,0.25);-webkit-box-shadow:-2px 3px 10px rgba(0,0,0,0.25);-moz-box-shadow:-2px 3px 10px rgba(0,0,0,0.25);filter:Shadow(315,10,#c0c0c0);border:1px solid #2b2b2b;background:url("img/dropdown.png");width:242px;height:370px;transform:scale(1)}
 .dropdown.alt.active{box-shadow:0 0 12px 3px rgba(0,149,72,0.9);-webkit-box-shadow:0 0 12px 3px rgba(0,149,72,0.9);-moz-box-shadow:0 0 12px 3px rgba(0,149,72,0.9);filter:Shadow(0,3,#009548)}
 .dropdown.alt > div{position:absolute;left:0;width:242px}
 .dropdown.alt .navbar-annotation{height:37px}
@@ -146,11 +146,11 @@ header.active{-webkit-box-shadow:0 3px 10px rgba(0,0,0,0.25);-moz-box-shadow:0 3
 .dropdown.alt .dashboard-annotation{top:295px;height:75px}
 #button{position:absolute;top:40px;right:96px;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;width:32px;height:32px;transition:box-shadow .2s ease-in;-webkit-transition:box-shadow .2s ease-in;-moz-transition:box-shadow .2s ease-in;-o-transition:box-shadow .2s ease-in}
 #button.active{box-shadow:0 0 12px 5px rgba(0,149,72,0.9);-webkit-box-shadow:0 0 12px 5px rgba(0,149,72,0.9);-moz-box-shadow:0 0 12px 5px rgba(0,149,72,0.9);filter:Shadow(0,#009548)}
-#counter{position:absolute;top:32px;right:85px;background:url("https://s3.amazonaws.com/images.disconnect.me/images/d2/counter.png");width:48px;height:48px}
+#counter{position:absolute;top:32px;right:85px;background:url("../img/counter.png");width:48px;height:48px}
 #divider,#accordion h3:after,#accordion .ui-accordion-content-active:after{display:block;position:absolute;bottom:0;background:linear-gradient(to right,#d1d1d1 38%,rgba(209,209,209,0) 95%);background:-webkit-gradient(linear,left top,right top,color-stop(38%,#d1d1d1),color-stop(95%,rgba(209,209,209,0)));background:-webkit-linear-gradient(left,#d1d1d1 38%,rgba(209,209,209,0) 95%);background:-moz-linear-gradient(left,#d1d1d1 38%,rgba(209,209,209,0) 95%);background:-o-linear-gradient(left,#d1d1d1 38%,rgba(209,209,209,0) 95%);filter:Gradient(1,#d1d1d1,rgba(0,209,209,0.82));background:-ms-linear-gradient(left,#d1d1d1 38%,rgba(209,209,209,0) 95%);width:360px;height:1px;content:''}
 #divider{z-index:1;margin-bottom:-90px}
 #column{position:relative;float:left;width:50%}
-#accordion{margin-right:40px;background:url("../images/overlay-white.png") right repeat-y;padding-top:70px;padding-bottom:60px}
+#accordion{margin-right:40px;background:url("../img/overlay-white.png") right repeat-y;padding-top:70px;padding-bottom:60px}
 #accordion h3{padding-top:10px;padding-bottom:12px;font:24px 'Avenir Next Thin','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:normal;color:#9f9f9f;transition:color .2s ease-in;-webkit-transition:color .2s ease-in;-moz-transition:color .2s ease-in;-o-transition:color .2s ease-in}
 #accordion h3:hover,#accordion h3.ui-state-active{color:#2b2b2b}
 #accordion h3.ui-state-active:after{display:none}
@@ -213,7 +213,7 @@ td{padding:0}
 .service input:hover{border-color:rgba(0,0,0,0.5)}
 .service input:checked{background:-webkit-linear-gradient(#60d490 38%,#68b789)}
 .service input:before{display:inline-block;width:100%;height:100%;content:''}
-.service input:checked:before{background:url("../images/check.png");background-size:contain}
+.service input:checked:before{background:url("../img/check.png");background-size:contain}
 .service .link{padding-left:5px}
 .service a{text-decoration:none;color:#666}
 .service :hover{color:#191919}
@@ -261,7 +261,7 @@ footer .top .viewport div:first-child{padding-top:0}
 #main-help h3{margin-top:72px}
 #main-help hr{margin:100px 0}
 
-#team{margin:0 0 60px 0;background:url("../images/team.jpg") no-repeat top center;overflow:visible;padding-top:43px;font-family:'Avenir Next',sans-serif;color:#9a9a9a;font-size:16px}
+#team{margin:0 0 60px 0;background:url("../img/team.jpg") no-repeat top center;overflow:visible;padding-top:43px;font-family:'Avenir Next',sans-serif;color:#9a9a9a;font-size:16px}
 #team h1{font-family:'Avenir Next Thin',sans-serif;font-size:32px;color:#35b95b}
 #team ul{padding-left:0;margin-top:30px}
 #team li{width:237px;list-style:none;margin:6px;float:left;min-height:237px;font-family:'Avenir Next',sans-serif}
