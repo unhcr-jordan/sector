@@ -216,6 +216,8 @@
         </style>
     </head>
     <body>
+     <!-- Loading screen -->
+        <div class="loader"></div>
         <div class="container-fluid" id="dashboard">
 
                 <!--    Color code for dashbaord
@@ -384,6 +386,11 @@
             <script type="text/javascript" src="../js/dc.js"></script>
             <script type="text/javascript" src="../js/d3.js"></script>
             <script>
+        // loading screen code
+        $(window).load(function() {
+        $(".loader").fadeOut("slow");
+        });
+        
         //GeoJSON data for background map
                     var width = 360;
                     var height = 360;
