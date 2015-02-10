@@ -240,11 +240,11 @@
                 </div>
                 <div class="col-md-7">
                    <!-- <center> </center> -->
-                        <h3><strong>Health Working Group | Syrian Refugee Response in Jordan
+                        <h3><strong>Health Working Group | 2015 Syrian Refugee Response in Jordan
                          | <a href="../../index.html"  target="_blank"><i class="icon-im-coord" style="color:white; font-size:20px;" ></i></a></strong></h3>
                         The data presented here are collected through the <a href="https://www.syrianrefugeeresponse.org/" target="_blank">Syrian Refugee Response</a> platform and then cleared by Sector focal points. More info on jordan <a href="http://data.unhcr.org/jordan" target="_blank">here</a>.<br />
                         <strong>The following charts shows the achievement of Health sector. Click on any of the graphs below to filter and slice the data.</strong>
-                        <p>The units displayed here corresponds to "Assistance Instance". As such totals presented here shoudl be understood with caution. </p>
+                        <p>The units displayed here corresponds to "Assistance Instance". As such totals presented here should be analysed with caution. </p>
                 </div>
                 <div class="col-md-4">
                     <div class="row" >
@@ -285,7 +285,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row">                <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-3">
                     <div class="row">
                         <center>
                             <div class="dc-chart" data-intro="Click on this row chart to filter by Indicator." data-position="right" data-step="1" id="indicator">
@@ -359,7 +360,7 @@
                         <div class="col-md-6"
                         data-intro="Click anywhere on the map to filter the results. The camp icon filters activities for camp only and the small jordan map filters country-wide activities" data-position="left" data-step="8" >
                             <div id="region">
-                                <h5><strong>Region</strong><br >
+                                <h5><strong>Governorates</strong><br >
                                 <small>Some activities are country-wide or for camps only.</small></h5>
                             </div>
                         </div>
@@ -432,7 +433,6 @@
            //Prepare to load data
                 var dataset;
 
-
                 var indicator_chart = dc.rowChart("#indicator");
                 var gender_chart = dc.pieChart("#gender");
                 var poptype_chart = dc.pieChart("#poptype");
@@ -483,8 +483,6 @@
                            filter(region_chart, 9);
                        }
                    }
-
-
 
                 d3.csv("data.csv", function(error, dataset) {
 
@@ -551,7 +549,6 @@
                        .renderLabel(true)
                        .colorAccessor(function(d, i){return i%4;})
                        .on("filtered", getFiltersValues);
-
 
                 cf.funded = cf.dimension(function(d) { return d.Fundedby; });
                 var funded = cf.funded.group();
@@ -685,6 +682,9 @@
                 cf.region = cf.dimension(function(d) { return d.region; });
                 var region = cf.region.group();
 
+
+
+
                dc.renderAll();
 
                /* Customised infobox */
@@ -692,6 +692,7 @@
                d3.selectAll("g.row").on('mouseover', rowTip.show).on('mouseout', rowTip.hide);
 
                d3.selectAll(".pie-slice").call(pieTip);
+               d3.selectAll(".pie-slice").on('mouseover', pieTip.show).on('mouseout', pieTip.hide);
 
 
                // tooltips
