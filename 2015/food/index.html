@@ -345,6 +345,11 @@
                                         <h5><strong>Funding Agency</strong><br ><small># of assistance instance</small></h5>
                                     </center>
                                 </div>
+								<div class="dc-chart" data-intro="Click on this pie chart to filter by Funding Agency." data-position="right" data-step="10" id="location">
+                                    <center>
+										<h5><strong>Top Locations </strong> <br> <small>Camps locations are not aggregated within Governorate</small></h5>
+                                    </center>
+                                </div>
                             </center>
                         </div>
                         <div class="col-md-6"
@@ -442,6 +447,7 @@
                 var partner_chart = dc.rowChart("#partner");
                 var month_chart = dc.lineChart("#month");
                 var monthrange_chart = dc.barChart("#monthrange");
+				var location_chart = dc.rowChart("#location");
                 var region_chart = dc.bubbleOverlay("#region").svg(d3.select("#region svg"));
 
                 function getFiltersValues() {
@@ -454,7 +460,7 @@
                                        { name: 'partner', value: partner_chart.filters()},
                                        { name: 'allocation', value: allocation_chart.filters()},
                                        { name: 'monthrange', value: monthrange_chart.filters()},
-
+									   { name: 'location', value: location_chart.filters()},
                                        { name: 'region', value: region_chart.filters()}
                                     ];
                        var recursiveEncoded = $.param( filters );
@@ -563,6 +569,21 @@
                        .colorDomain([0,0])
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
+				
+				cf.location = cf.dimension(function(d) { return d.Governorate; });
+                var location = cf.location.group();
+                var locationByTotal = cf.location.group().reduceSum(function (d) { return d.Value;} );
+                   location_chart.width(400).height(175)
+                       .dimension(cf.location)
+                       .group(locationByTotal)
+                       .elasticX(true)
+                       .on("filtered", getFiltersValues)
+                       .data(function(group) { return group.top(6); })
+                       .colors(['#99A5B7'])
+                       .colorDomain([0,0])
+                       .colorAccessor(function(d, i){return 1;})
+                       .xAxis().ticks(4).tickFormat(d3.format("s"));
+					   
 
                 cf.appeal = cf.dimension(function(d) { return d.appeal; });
                 var appeal = cf.appeal.group();
