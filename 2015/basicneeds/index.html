@@ -548,10 +548,6 @@
                        .dimension(cf.poptype)
                        .group(poptypeByTotal)
                        .innerRadius(10)
-                       .colors(['#8da0cb', /* boys */
-                               '#fc8d62', /* girls */
-                               '#66C2A5', /* men */
-                               ])
                        .colorDomain([0,4])
                        .renderLabel(true)
                        .colorAccessor(function(d, i){return i%4;})
