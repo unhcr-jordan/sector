@@ -352,7 +352,7 @@
 										<h5><strong>Top Locations </strong> <br> <small>Camps locations are not aggregated within Governorate</small></h5>
                                     </center>
                                 </div>
-								<div class="dc-chart" data-intro="Click on this pie chart to filter by Funding Agency." data-position="right" data-step="10" id="obj">
+								<div class="dc-chart" data-intro="Click on this pie chart to filter by Funding Agency." data-position="right" data-step="11" id="obj">
                                 </div>
                             </center>
                         </div>
@@ -597,10 +597,10 @@
 				cf.obj = cf.dimension(function(d) { return d.activity; });
                 var obj = cf.obj.group();
                 var objByTotal = cf.obj.group().reduceSum(function (d) { return d.Value;} );
-                   obj_chart.width(1).height(1)
+                   obj_chart.width(10).height(10)
                        .dimension(cf.obj)
                        .group(objByTotal)
-                       .elasticX(false)
+                       .elasticX(true)
                        .on("filtered", getFiltersValues)
                        .data(function(group) { return group.top(4); })
                        .colors(['#99A5B7'])
