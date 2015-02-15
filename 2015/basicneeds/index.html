@@ -346,6 +346,11 @@
                                         <h5><strong>Funding Agency</strong><br ><small># of assistance instance</small></h5>
                                     </center>
                                 </div>
+                                <div class="dc-chart" data-intro="Click on this pie chart to filter by Funding Agency." data-position="right" data-step="10" id="location">
+                                    <center>
+										<h5><strong>Top Locations </strong> <br> <small>Camps locations are not aggregated within Governorate</small></h5>
+                                    </center>
+                                </div>
                             </center>
                         </div>
                         <div class="col-md-6"
@@ -443,6 +448,7 @@
                 var partner_chart = dc.rowChart("#partner");
                 var month_chart = dc.lineChart("#month");
                 var monthrange_chart = dc.barChart("#monthrange");
+				var location_chart = dc.rowChart("#location");
                 var region_chart = dc.bubbleOverlay("#region").svg(d3.select("#region svg"));
 
                 function getFiltersValues() {
@@ -455,7 +461,7 @@
                                        { name: 'partner', value: partner_chart.filters()},
                                        { name: 'allocation', value: allocation_chart.filters()},
                                        { name: 'monthrange', value: monthrange_chart.filters()},
-
+									   { name: 'location', value: location_chart.filters()},
                                        { name: 'region', value: region_chart.filters()}
                                     ];
                        var recursiveEncoded = $.param( filters );
@@ -564,6 +570,23 @@
                        .colorDomain([0,0])
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
+					   
+					   
+					   
+				cf.location = cf.dimension(function(d) { return d.Governorate; });
+                var location = cf.location.group();
+                var locationByTotal = cf.location.group().reduceSum(function (d) { return d.Value;} );
+                   location_chart.width(400).height(175)
+                       .dimension(cf.location)
+                       .group(locationByTotal)
+                       .elasticX(true)
+                       .on("filtered", getFiltersValues)
+                       .data(function(group) { return group.top(6); })
+                       .colors(['#99A5B7'])
+                       .colorDomain([0,0])
+                       .colorAccessor(function(d, i){return 1;})
+                       .xAxis().ticks(4).tickFormat(d3.format("s"));
+					   
 
                 cf.appeal = cf.dimension(function(d) { return d.appeal; });
                 var appeal = cf.appeal.group();
@@ -618,7 +641,7 @@
                        .dimension(cf.month)
                        .mouseZoomable(true)
                        .rangeChart(monthrange_chart)
-                       .x(d3.time.scale().domain([new Date(2014, 0, 1), new Date(2014, 11, 31)]))
+                       .x(d3.time.scale().domain([new Date(2014, 0, 1), new Date(2015, 11, 31)]))
                        .xUnits(d3.time.months)
         //.elasticY(true)
                        .renderHorizontalGridLines(true)
@@ -634,7 +657,7 @@
                        .group(monthByTotal)
                        .colors(['#99A5B7'])
                        .gap(1)
-                       .x(d3.time.scale().domain([new Date(2014, 0, 1), new Date(2014, 12, 31)]))
+                       .x(d3.time.scale().domain([new Date(2014, 0, 1), new Date(2015, 11, 31)]))
                        .xUnits(d3.time.months)
                        .yAxis().ticks(0);
 
@@ -655,7 +678,7 @@
                   //      .radiusValueAccessor(function (p) { return p.value;  })
                    //     .maxBubbleRelativeSize(0.03)
                         
-                        .r(d3.scale.linear().domain([0, 20000]))
+                        .r(d3.scale.linear().domain([0, 1000000]))
                         .point("IRBID", 98, 58)
                         .point("MAFRAQ", 193, 70)
                         .point("ZARQA", 160, 108)
@@ -669,7 +692,7 @@
                         .point("JARASH", 104, 82)
                         .point("AJLOUN", 74, 96)
                         .point("Camps", 270, 175)
-                        .point("Countrywide", 255, 260)
+						.point("Countrywide", 255, 260)
                         .on("filtered", getFiltersValues)
                       //  .debug(true)
                        ;
