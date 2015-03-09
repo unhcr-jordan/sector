@@ -19,6 +19,7 @@
         <!-- Add IntroJs styles and JS -->
         <link href="../../css/introjs.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../../js/intro.js"></script>
+		<script type="text/javascript" src="../../js/monthlyReport.js"> </script>			
         <script src="../../js/jquery.js"></script>
         <!-- map the data to the GeoJSON object -->
         <script src="../../js/data-jo.js"></script>
@@ -697,7 +698,7 @@
                         .point("BALQA", 94, 96)
                         .point("JARASH", 104, 82)
                         .point("AJLOUN", 74, 96)
-                        .point("Zaatari Camp", 270, 150)
+                        .point("ZaatariCamp", 270, 150)
                         .point("Azraq Camp", 270, 180)
                         .point("Countrywide", 255, 260)
                         .on("filtered", getFiltersValues)
@@ -739,7 +740,17 @@
                 });
             </script>
             
-            <script src="../../js/bootstrap.js"></script>            <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
+            <script src="../../js/bootstrap.js"></script> 
+						            <script>
+                $(window).bind("load", function() {
+				if (GetUrlValue('Camp')=="ZaatariCamp")
+				{
+				dc.filterAll(); location_chart.filter("ZaatariCamp");  dc.renderAll();
+				}
+                });
+                
+            </script>
+			<div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
             <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
             <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
         </div>
