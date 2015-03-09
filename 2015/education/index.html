@@ -633,21 +633,31 @@
                 cf.month = cf.dimension(function (d) {return d.month;});
                 var month = cf.month.group();
                 var monthByTotal = cf.month.group().reduceSum(function (d) { return d.Value;} );
+				var boys=cf.month.group().reduceSum(function(d) {if (d.Gender=="Boys") {return d.Value;}else{return 0;}});
+				var girls=cf.month.group().reduceSum(function(d) {if (d.Gender=="Girls") {return d.Value;}else{return 0;}});
+				var men=cf.month.group().reduceSum(function(d) {if (d.Gender=="Men") {return d.Value;}else{return 0;}});
+				var women=cf.month.group().reduceSum(function(d) {if (d.Gender=="Women") {return d.Value;}else{return 0;}});
+				
+				
                    month_chart.width(900).height(230)
                        .transitionDuration(1000)
                        .margins({top: 30, right: 50, bottom: 25, left: 40})
                        .dimension(cf.month)
                        .mouseZoomable(true)
                        .rangeChart(monthrange_chart)
-                       .x(d3.time.scale().domain([new Date(2014, 0, 1), new Date(2014, 11, 31)]))
+                       .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2015, 11, 31)]))
                        .xUnits(d3.time.months)
         //.elasticY(true)
                        .renderHorizontalGridLines(true)
                        .legend(dc.legend().x(700).y(10).itemHeight(13).gap(5))
                        .brushOn(false)
-                       .group(monthByTotal, "Monthly Progress")
-                       .valueAccessor(function (d) { return d.value; })
-                       .colors(['#99A5B7']);
+						.group(boys, 'Boys')
+						.stack(girls, 'Girls')
+						.stack(men, 'Men')
+						.stack(women, 'Women')
+					   .renderArea(false);
+					   
+					   
                    monthrange_chart.width(900)
                        .height(40)
                        .margins({top: 0, right: 50, bottom: 20, left: 40})
@@ -655,7 +665,7 @@
                        .group(monthByTotal)
                        .colors(['#99A5B7'])
                        .gap(1)
-                       .x(d3.time.scale().domain([new Date(2014, 0, 1), new Date(2014, 12, 31)]))
+                       .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2015, 11, 31)]))
                        .xUnits(d3.time.months)
                        .yAxis().ticks(0);
 

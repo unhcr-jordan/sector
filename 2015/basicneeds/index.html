@@ -271,7 +271,7 @@
                         <strong><span class="filter-count " ></span></strong> selected out of <span class="total-count "></span> records</div>&nbsp;&nbsp;
                         <a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll();dc.redrawAll();">Reset All Filters</a>&nbsp;&nbsp;
                         <a class="btn btn btn-info" href="#timelineid" >Highlight</a>&nbsp;&nbsp;
-                        <a class="reset btn btn-primary btn-sm" href="monthSel.html" onclick="javascript:void window.open('monthSel.html','1418129557768','width=190,height=120,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=1,left=800,top=300');return false;"> Report </a>&nbsp;&nbsp;
+                        <a class="reset btn btn-primary btn-sm" href="monthSel.html" onclick="javascript:void window.open('monthSel.html','1418129557768','width=210,height=120,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=1,left=800,top=300');return false;"> Report </a>&nbsp;&nbsp;
                          <a class="btn btn btn-success" href="javascript:void(0);" onclick="javascript:introJs().start();">Tutorial</a> <br >
                     </div>
                 </div>
@@ -654,21 +654,31 @@
                 cf.month = cf.dimension(function (d) {return d.month;});
                 var month = cf.month.group();
                 var monthByTotal = cf.month.group().reduceSum(function (d) { return d.Value;} );
+				var boys=cf.month.group().reduceSum(function(d) {if (d.Gender=="Boys") {return d.Value;}else{return 0;}});
+				var girls=cf.month.group().reduceSum(function(d) {if (d.Gender=="Girls") {return d.Value;}else{return 0;}});
+				var men=cf.month.group().reduceSum(function(d) {if (d.Gender=="Men") {return d.Value;}else{return 0;}});
+				var women=cf.month.group().reduceSum(function(d) {if (d.Gender=="Women") {return d.Value;}else{return 0;}});
+				
                    month_chart.width(900).height(230)
                        .transitionDuration(1000)
                        .margins({top: 30, right: 50, bottom: 25, left: 40})
                        .dimension(cf.month)
                        .mouseZoomable(true)
                        .rangeChart(monthrange_chart)
-                       .x(d3.time.scale().domain([new Date(2014, 0, 1), new Date(2015, 11, 31)]))
+                       .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2015, 11, 31)]))
                        .xUnits(d3.time.months)
         //.elasticY(true)
                        .renderHorizontalGridLines(true)
                        .legend(dc.legend().x(700).y(10).itemHeight(13).gap(5))
                        .brushOn(false)
-                       .group(monthByTotal, "Monthly Progress")
-                       .valueAccessor(function (d) { return d.value; })
-                       .colors(['#99A5B7']);
+						.group(boys, 'Boys')
+						.stack(girls, 'Girls')
+						.stack(men, 'Men')
+						.stack(women, 'Women')
+					   .renderArea(false);
+					   
+					   
+					   
                    monthrange_chart.width(900)
                        .height(40)
                        .margins({top: 0, right: 50, bottom: 20, left: 40})
@@ -676,7 +686,7 @@
                        .group(monthByTotal)
                        .colors(['#99A5B7'])
                        .gap(1)
-                       .x(d3.time.scale().domain([new Date(2014, 0, 1), new Date(2015, 11, 31)]))
+                       .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2015, 11, 31)]))
                        .xUnits(d3.time.months)
                        .yAxis().ticks(0);
 
