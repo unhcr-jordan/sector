@@ -699,7 +699,7 @@
                         .point("JARASH", 104, 82)
                         .point("AJLOUN", 74, 96)
                         .point("ZaatariCamp", 270, 150)
-                        .point("Azraq Camp", 270, 180)
+                        .point("AzraqCamp", 270, 180)
                         .point("Countrywide", 255, 260)
                         .on("filtered", getFiltersValues)
                       //  .debug(true)
@@ -747,6 +747,7 @@
 				{
 				dc.filterAll(); location_chart.filter("ZaatariCamp");  dc.renderAll();
 				}
+				dc.filterAll(); monthrange_chart.filter([new Date(2015, GetUrlValue('Month')-1, 1), new Date(2015, GetUrlValue('Month')-1, 30)]); dc.redrawAll();				
                 });
                 
             </script>
