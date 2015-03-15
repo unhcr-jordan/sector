@@ -639,7 +639,7 @@
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-                cf.month = cf.dimension(function (d) {return d.month;});
+                cf.month = cf.dimension(function (d) {return d.dd;});
                 var month = cf.month.group();
                 var monthByTotal = cf.month.group().reduceSum(function (d) { return d.Value;} );
 				var boys=cf.month.group().reduceSum(function(d) {if (d.Gender=="Boys") {return d.Value;}else{return 0;}});
@@ -757,7 +757,9 @@
 				{
 				dc.filterAll(); location_chart.filter("ZaatariCamp");  dc.renderAll();
 				}
-				dc.filterAll(); monthrange_chart.filter([new Date(2015, 1, 1), new Date(2015, 1, 30)]); dc.redrawAll();
+				var d = new Date();
+				var n = d.getMonth();
+				dc.filterAll(); monthrange_chart.filter([new Date(2015, n-1, 1), new Date(2015, n-1, 31)]); dc.redrawAll();
                 });
                 
             </script>
