@@ -475,7 +475,7 @@
                                 .attr("height", height)
                                 .style("stroke-width", "0")
                                 .style("stroke", "grey");
-                    d3.json("../../data/AZRAQ.geojson", function(json) {
+                    d3.json("../../data/azraq.geojson", function(json) {
                         var center = d3.geo.centroid(json)
                         var scale  = 150;
                         var offset = [width/2, height/2];
