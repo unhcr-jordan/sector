@@ -282,6 +282,15 @@
                 <div class="col-md-3">
                     <div class="row">
                         <center>
+                            <div class="dc-chart" data-intro="Click on this row chart to filter by Activity." data-position="right" data-step="1" id="obj">
+                                <center>
+                                    <h5><strong>Objective</strong><br ><small># of reports</small></h5>
+                                </center>
+                            </div>
+                        </center>
+                    </div>
+                    <div class="row">
+                        <center>
                             <div class="dc-chart" data-intro="Click on this row chart to filter by Indicator." data-position="right" data-step="1" id="indicator">
                                 <center>
                                     <h5><strong>Indicator</strong><br ><small># of assistance instance</small></h5>
@@ -460,6 +469,7 @@
                 var month_chart = dc.lineChart("#month");
                 var monthrange_chart = dc.barChart("#monthrange");
                 var location_chart = dc.rowChart("#location");
+                var obj_chart = dc.rowChart("#obj");
                 var region_chart = dc.bubbleOverlay("#region").svg(d3.select("#region svg"));
 
                 function getFiltersValues() {
@@ -473,6 +483,7 @@
                                        { name: 'allocation', value: allocation_chart.filters()},
                                        { name: 'monthrange', value: monthrange_chart.filters()},
                                        { name: 'location', value: location_chart.filters()},
+                                       { name: 'obj', value: obj_chart.filters()},
                                        { name: 'region', value: region_chart.filters()}
                                     ];
                        var recursiveEncoded = $.param( filters );
@@ -499,6 +510,7 @@
                            filter(allocation_chart, 7);
                            filter(poptype_chart, 8);
                            filter(region_chart, 9);
+                           filter(obj_chart, 10);
                        }
                    }
 
@@ -591,6 +603,20 @@
                        .elasticX(true)
                        .on("filtered", getFiltersValues)
                        .data(function(group) { return group.top(6); })
+                       .colors(['#99A5B7'])
+                       .colorDomain([0,0])
+                       .colorAccessor(function(d, i){return 1;})
+                       .xAxis().ticks(4).tickFormat(d3.format("s"));
+
+                cf.obj = cf.dimension(function(d) { return d.activity; });
+                var obj = cf.obj.group();
+                var objByTotal = cf.obj.group().reduceCount();
+                   obj_chart.width(400).height(140)
+                       .dimension(cf.obj)
+                       .group(objByTotal)
+                       .elasticX(false)
+                       .on("filtered", getFiltersValues)
+                       .data(function(group) { return group.top(4); })
                        .colors(['#99A5B7'])
                        .colorDomain([0,0])
                        .colorAccessor(function(d, i){return 1;})

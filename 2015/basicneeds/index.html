@@ -469,11 +469,11 @@
                 var funded_chart = dc.rowChart("#funded");
                 var appeal_chart = dc.rowChart("#appeal");
                 var allocation_chart = dc.rowChart("#allocation");
-                var obj_chart = dc.rowChart("#obj");
                 var partner_chart = dc.rowChart("#partner");
                 var month_chart = dc.lineChart("#month");
                 var monthrange_chart = dc.barChart("#monthrange");
                 var location_chart = dc.rowChart("#location");
+                var obj_chart = dc.rowChart("#obj");
                 var region_chart = dc.bubbleOverlay("#region").svg(d3.select("#region svg"));
 
                 function getFiltersValues() {
@@ -486,8 +486,8 @@
                                        { name: 'partner', value: partner_chart.filters()},
                                        { name: 'allocation', value: allocation_chart.filters()},
                                        { name: 'monthrange', value: monthrange_chart.filters()},
-                                       { name: 'obj', value: obj_chart.filters()},
                                        { name: 'location', value: location_chart.filters()},
+                                       { name: 'obj', value: obj_chart.filters()},
                                        { name: 'region', value: region_chart.filters()}
                                     ];
                        var recursiveEncoded = $.param( filters );
