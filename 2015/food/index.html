@@ -401,10 +401,10 @@
                        .dimension(cf.gender)
                        .group(genderByTotal)
                        .innerRadius(10)
-                       .colors(['#8da0cb', /* boys */
-                               '#fc8d62', /* girls */
-                               '#e78ac3', /* men */
-                               '#66c2a5', /* women */
+                       .colors(['#00b26b', /* boys */
+                               '#66D1A6', /* girls */
+                               '#88F1C4', /* men */
+							   '#00FF00', /* women */
                                ])
                        .colorDomain([0,4])
                        .renderLabel(true)
@@ -418,9 +418,9 @@
                        .dimension(cf.poptype)
                        .group(poptypeByTotal)
                        .innerRadius(10)
-                       .colors(['#8da0cb', /* boys */
-                               '#fc8d62', /* girls */
-                               '#e78ac3', /* men */
+                       .colors(['#00b26b',
+                               '#66D1A6', 
+                               '#88F1C4', 
                                ])
                        .colorDomain([0,4])
                        .renderLabel(true)
@@ -463,7 +463,7 @@
                        .group(objByTotal)
                        .elasticX(false)
                        .on("filtered", getFiltersValues)
-                       .data(function(group) { return group.top(4); })
+                       .data(function(group) { return group.top(3); })
                        .colors(['#00b26b'])
                        .colorDomain([0,0])
                        .colorAccessor(function(d, i){return 1;})
@@ -569,7 +569,7 @@
                   //      .radiusValueAccessor(function (p) { return p.value;  })
                    //     .maxBubbleRelativeSize(0.03)
 
-                        .r(d3.scale.linear().domain([0, 1000000]))
+                        .r(d3.scale.linear().domain([0, 10000000]))
                         .point("IRBID", 98, 58)
                         .point("MAFRAQ", 193, 70)
                         .point("ZARQA", 160, 108)

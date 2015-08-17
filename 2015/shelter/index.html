@@ -397,10 +397,10 @@
                        .dimension(cf.gender)
                        .group(genderByTotal)
                        .innerRadius(10)
-                       .colors(['#8da0cb', /* boys */
-                               '#fc8d62', /* girls */
-                               '#e78ac3', /* men */
-                               '#66c2a5', /* women */
+                       .colors(['#FEBD3B', /* boys */
+                               '#FED789', /* girls */
+                               '#FF8E76', /* men */	
+							   '#FE9050', /* women */
                                ])
                        .colorDomain([0,4])
                        .renderLabel(true)
@@ -414,9 +414,9 @@
                        .dimension(cf.poptype)
                        .group(poptypeByTotal)
                        .innerRadius(10)
-                       .colors(['#8da0cb', /* boys */
-                               '#fc8d62', /* girls */
-                               '#e78ac3', /* men */
+                       .colors(['#febd3b', /* Camp */
+                               '#FED789', /* Urban */
+                               '#FF8E76', /* Host Community*/							   
                                ])
                        .colorDomain([0,4])
                        .renderLabel(true)
@@ -563,7 +563,7 @@
                   //      .radiusValueAccessor(function (p) { return p.value;  })
                    //     .maxBubbleRelativeSize(0.03)
 
-                        .r(d3.scale.linear().domain([0, 100000]))
+                        .r(d3.scale.linear().domain([0, 1000000]))
                         .point("IRBID", 98, 58)
                         .point("MAFRAQ", 193, 70)
                         .point("ZARQA", 160, 108)

@@ -403,10 +403,10 @@
                        .dimension(cf.gender)
                        .group(genderByTotal)
                        .innerRadius(10)
-                       .colors(['#8da0cb', /* boys */
-                               '#fc8d62', /* girls */
-                               '#e78ac3', /* men */
-                               '#66c2a5', /* women */
+                       .colors(['#58595B', /* boys */
+                               '#888888', /* girls */
+                               '#AAAAAA', /* men*/
+							   '#DDDDDD', /* women */
                                ])
                        .colorDomain([0,4])
                        .renderLabel(true)
@@ -421,6 +421,10 @@
                        .dimension(cf.poptype)
                        .group(poptypeByTotal)
                        .innerRadius(10)
+                       .colors(['#58595B', 
+                               '#888888', 
+                               '#AAAAAA', 
+                               ])					   
                        .colorDomain([0,4])
                        .renderLabel(true)
                        .colorAccessor(function(d, i){return i%4;})
@@ -430,7 +434,7 @@
                 var funded = cf.funded.group();
                 var fundedByTotal = cf.funded.group().reduceSum(function(d) {if (d.Units=="# of benef") {return d.Value;}else{return 0;}} );
                 //var fundedByTotal = cf.funded.group().reduceSum(function (d) { return d.Value;} );
-                   funded_chart.width(400).height(175)
+                   funded_chart.width(400).height(135)
                        .dimension(cf.funded)
                        .group(fundedByTotal)
                        .elasticX(true)
@@ -575,7 +579,7 @@
                   //      .radiusValueAccessor(function (p) { return p.value;  })
                    //     .maxBubbleRelativeSize(0.03)
 
-                        .r(d3.scale.linear().domain([0, 1000000]))
+                        .r(d3.scale.linear().domain([0, 10000000]))
                         .point("IRBID", 98, 58)
                         .point("MAFRAQ", 193, 70)
                         .point("ZARQA", 160, 108)

@@ -102,7 +102,6 @@
                         <strong><span class="filter-count " ></span></strong> selected out of <span class="total-count "></span> records</div>&nbsp;&nbsp;
                         <a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll();dc.redrawAll();">Reset All Filters</a>&nbsp;&nbsp;
                         <a class="btn btn btn-info" href="#timelineid" >Highlight</a>&nbsp;&nbsp;
-                        <a class="reset btn btn-primary btn-sm" href="monthSel.html" onclick="javascript:void window.open('monthSel.html','1418129557768','width=190,height=120,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=1,left=800,top=300');return false;"> Report </a>&nbsp;&nbsp;
                         <a class="btn btn btn-success" href="javascript:void(0);" onclick="javascript:introJs().start();">Tutorial</a> <br >
                         
                        
@@ -354,7 +353,7 @@
                        }
                    }
 
-                d3.csv("data.csv", function(error, dataset) {
+                d3.csv("dataind.csv", function(error, dataset) {
 
                 var dateFormat = d3.time.format("%d/%m/%Y");
                 var numberFormat = d3.format(",f");
@@ -396,10 +395,10 @@
                        .dimension(cf.gender)
                        .group(genderByTotal)
                        .innerRadius(30)
-                       .colors(['#8da0cb', /* boys */
-                               '#fc8d62', /* girls */
-                               '#e78ac3', /* men */
-                               '#66c2a5', /* women */
+                       .colors(['#00b26b', /* boys */
+                               '#66D1A6', /* girls */
+                               '#88F1C4', /* men */
+							   '#00FF00', /* women */
                                ])
                        .colorDomain([0,4])
                        .renderLabel(true)
@@ -580,7 +579,7 @@
                   //      .radiusValueAccessor(function (p) { return p.value;  })
                    //     .maxBubbleRelativeSize(0.03)
 
-                        .r(d3.scale.linear().domain([0, 1000000]))
+                        .r(d3.scale.linear().domain([0, 10000000]))
                         .point("IRBID", 98, 58)
                         .point("MAFRAQ", 193, 70)
                         .point("ZARQA", 160, 108)
