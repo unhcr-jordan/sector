@@ -1,0 +1,33 @@
+#month g.stack._0  > rect.bar {
+    stroke: none;
+    fill: #542F93
+}
+#month g.stack._1 > rect.bar {
+    stroke: none;
+    fill: #E44692;
+}
+#month g.stack._2 > rect.bar {
+    stroke: none;
+    fill: #9854F4;
+}
+#month g.stack._3 > rect.bar {
+    stroke: none;
+    fill: #E987D7;
+}
+
+#month g.dc-legend-item:nth-child(1) > rect:nth-child(1) {
+    stroke: none;
+    fill: red;
+}
+#month g.dc-legend-item:nth-child(2) > rect:nth-child(1) {
+    stroke: none;
+    fill: green;
+}
+#month g.dc-legend-item:nth-child(3) > rect:nth-child(1) {
+    stroke: none;
+    fill: yellow;
+}
+#month g.dc-legend-item:nth-child(4) > rect:nth-child(1) {
+    stroke: none;
+    fill: blue;
+}

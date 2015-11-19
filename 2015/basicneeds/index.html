@@ -313,7 +313,7 @@
                 var appeal_chart = dc.rowChart("#appeal");
                 var allocation_chart = dc.rowChart("#allocation");
                 var partner_chart = dc.rowChart("#partner");
-                var month_chart = dc.lineChart("#month");
+                var month_chart = dc.barChart("#month");
                 var monthrange_chart = dc.barChart("#monthrange");
                 var location_chart = dc.rowChart("#location");
                 var obj_chart = dc.rowChart("#obj");
@@ -369,6 +369,7 @@
                 dataset.forEach(function (d) {
                    d.dd = dateFormat.parse(d.StartDate);
                    d.month = d3.time.month(d.dd); // pre-calculate month for better performance
+				   d.monthName  = d3.time.format("%B").parse(d.StartDate);
                    d.close = +d.close; // coerce to number
                    d.open = +d.open;
                 });
@@ -523,6 +524,8 @@
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
 
                 cf.month = cf.dimension(function (d) {return d.dd;});
+                cf.monthName = cf.dimension(function (d) {return d.monthName;});	
+				var monthName = cf.monthName.group();
                 var month = cf.month.group();
                 var monthByTotal = cf.month.group().reduceSum(function(d) {if (d.Units=="# of benef") {return d.Value;}else{return 0;}} );
                 //var monthByTotal = cf.month.group().reduceSum(function (d) { return d.Value;} );
@@ -531,23 +534,39 @@
                 var men=cf.month.group().reduceSum(function(d) {if ((d.Gender=="Men") && (d.Units=="# of benef")) {return d.Value;}else{return 0;}});
                 var women=cf.month.group().reduceSum(function(d) {if ((d.Gender=="Women") && (d.Units=="# of benef")) {return d.Value;}else{return 0;}});
 
+				
+            var colorRenderlet = function (_chart) {
+                _chart.selectAll("rect.bar")
+                        .on("click", function (d) {
+                            function setAttr(selection, keyName) {
+                                selection.style("fill", function (d) {
+                                    if (d[keyName] == "Boys") return "#5bc0de";
+                                    else if (d[keyName] == "Girls") return "#888888";
+									else if (d[keyName] == "Men") return "#AAAAAA";
+									else if (d[keyName] == "Women") return "#DDDDDD";
+                                });
+                            };
+                            setAttr(_chart.selectAll("g.stack").selectAll("rect.bar"), "layer")
+                            setAttr(_chart.selectAll("g.dc-legend-item").selectAll("rect"), "name")
+                        });
+            };  				
+				
                    month_chart.width(900).height(230)
-                       .transitionDuration(1000)
                        .margins({top: 30, right: 50, bottom: 25, left: 60})
                        .dimension(cf.month)
-                       .mouseZoomable(true)
-                       .rangeChart(monthrange_chart)
-                       .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2015, 11, 31)]))
-                       .xUnits(d3.time.months)
-        //.elasticY(true)
-                       .renderHorizontalGridLines(true)
-                       .legend(dc.legend().x(700).y(10).itemHeight(13).gap(5))
-                       .brushOn(false)
                         .group(boys, 'Boys')
                         .stack(girls, 'Girls')
                         .stack(men, 'Men')
                         .stack(women, 'Women')
-                       .renderArea(true);
+                        .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2015, 11, 31)]))
+						.xUnits(d3.time.months)
+						.renderHorizontalGridLines(true)
+						.barPadding(0.2)
+						.outerPadding(0.05)
+						.elasticY(true)
+						.brushOn(false)
+						.renderlet(colorRenderlet)
+						.legend(dc.legend().x(675).y(10).itemHeight(15).gap(1));
 
 
 
@@ -620,6 +639,11 @@
 
                d3.selectAll(".pie-slice").call(pieTip);
                d3.selectAll(".pie-slice").on('mouseover', pieTip.show).on('mouseout', pieTip.hide);
+            
+
+            var stackChart = 'div#month.dc-chart rect';
+            d3.selectAll(stackChart).call(barTip);
+            d3.selectAll(stackChart).on('mouseover', barTip.show).on('mouseout', barTip.hide);			   
 
 
                // tooltips
@@ -647,9 +671,9 @@
                 }
                 var d = new Date();
                 var n = d.getMonth();
-                dc.filterAll();
-                 monthrange_chart.filter([new Date(2015, n-1, 1), new Date(2015, n-1, 31)]);
-                dc.redrawAll();
+                //dc.filterAll();
+                // monthrange_chart.filter([new Date(2015, n-1, 1), new Date(2015, n-1, 31)]);
+                //dc.redrawAll();
                 });
 
             </script>
