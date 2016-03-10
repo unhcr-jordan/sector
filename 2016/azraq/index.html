@@ -317,7 +317,7 @@
                         <center>
                             <div class="dc-chart" data-intro="Click on this row chart to filter by Partner." data-position="right" data-step="5" id="indicatorbasicneeds">
                                 <center>
-								<a href="http://unhcr-jordan.github.io/sectors/2015/basicneeds/index.html?Camp=AzraqCamp" alt="Click for Basic Needs Sector Dashboard" target="_blank">
+								<a href="http://unhcr-jordan.github.io/sectors/2016/basicneeds/index.html?Camp=AzraqCamp" alt="Click for Basic Needs Sector Dashboard" target="_blank">
                                     <i class="icon-ocha-sector-livelihood" style="color:#215968;  font-size:70px;"></i>
 								</a>	
 									<h5><small># of assistance instance</small></h5>
@@ -329,7 +329,7 @@
                         <center>
                             <div class="dc-chart" data-intro="Click on this row chart to filter by Partner." data-position="right" data-step="5" id="indicatorfood">
                                 <center>
-								<a href="http://unhcr-jordan.github.io/sectors/2015/food/index.html?Camp=AzraqCamp" alt="Click for Food Security Sector Dashboard" target="_blank">								
+								<a href="http://unhcr-jordan.github.io/sectors/2016/food/index.html?Camp=AzraqCamp" alt="Click for Food Security Sector Dashboard" target="_blank">								
                                     <i class="icon-ocha-sector-foodsecurity" style="color:#006600; font-size:70px;" ></i>
 									</a>
 									<h5><small># of assistance instance</small></h5>
@@ -353,7 +353,7 @@
                         <center>
                             <div class="dc-chart" data-intro="Click on this row chart to filter by Partner." data-position="right" data-step="5" id="indicatorhealth">
                                 <center>
-								<a href="http://unhcr-jordan.github.io/sectors/2015/health/index.html?Camp=AzraqCamp" alt="Click for Health Sector Dashboard" target="_blank">								
+								<a href="http://unhcr-jordan.github.io/sectors/2016/health/index.html?Camp=AzraqCamp" alt="Click for Health Sector Dashboard" target="_blank">								
                                     <i class="icon-ocha-sector-health" style="color:#92d050; font-size:70px;" ></i> 
 								</a>	
 									<h5><small># of assistance instance</small></h5>
@@ -379,7 +379,7 @@
                             <center>
                                 <div class="dc-chart" data-intro="Click on this pie chart to filter by Funding Agency." data-position="right" data-step="3" id="indicatorshelter">
                                     <center>
-								<a href="http://unhcr-jordan.github.io/sectors/2015/shelter/index.html?Camp=AzraqCamp" alt="Click for Shelter Sector Dashboard" target="_blank">									
+								<a href="http://unhcr-jordan.github.io/sectors/2016/shelter/index.html?Camp=AzraqCamp" alt="Click for Shelter Sector Dashboard" target="_blank">									
                                         <i class="icon-ocha-sector-campmanagement" style="color:#ffc000; font-size:70px;" ></i> 
 								</a>		
 										<h5><small># of assistance instance</small></h5>
@@ -389,7 +389,7 @@
                             <center>
                                 <div class="dc-chart" data-intro="Click on this pie chart to filter by Funding Agency." data-position="right" data-step="3" id="indicatorwash">
                                     <center>
-								<a href="http://unhcr-jordan.github.io/sectors/2015/wash/index.html?Camp=AzraqCamp" alt="Click for WASH Sector Dashboard" target="_blank">									
+								<a href="http://unhcr-jordan.github.io/sectors/2016/wash/index.html?Camp=AzraqCamp" alt="Click for WASH Sector Dashboard" target="_blank">									
                                         <i class="icon-ocha-sector-wash" style="color:#7030a0; font-size:70px;" ></i>
 								</a>		
 										<h5><small># of assistance instance</small></h5>
@@ -785,7 +785,7 @@
                        .dimension(cf.month)
                        .mouseZoomable(true)
                        .rangeChart(monthrange_chart)
-                       .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2015, 11, 31)]))
+                       .x(d3.time.scale().domain([new Date(2016, 0, 1), new Date(2016, 11, 31)]))
                        .xUnits(d3.time.months)
         //.elasticY(true)
                        .renderHorizontalGridLines(true)
@@ -809,7 +809,7 @@
                        .group(monthByTotal)
                        .colors(['#99A5B7'])
                        .gap(1)
-                       .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2015, 12, 31)]))
+                       .x(d3.time.scale().domain([new Date(2016, 0, 1), new Date(2016, 12, 31)]))
                        .xUnits(d3.time.months)
                        .yAxis().ticks(0);
 
@@ -886,7 +886,7 @@
 				}
 				var d = new Date();
 				var n = d.getMonth();
-				dc.filterAll(); monthrange_chart.filter([new Date(2015, n-1, 1), new Date(2015, n-1, 31)]); dc.redrawAll();
+				dc.filterAll(); monthrange_chart.filter([new Date(2016, n-1, 1), new Date(2016, n-1, 31)]); dc.redrawAll();
                 });
                 
             </script>
