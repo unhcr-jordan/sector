@@ -400,11 +400,11 @@
                        .dimension(cf.gender)
                        .group(genderByTotal)
                        .innerRadius(10)
-                       .colors(['#d44e5b', /* boys */
-                               '#AA0055', /* girls */
-                               '#E5959D', /* men*/
-							   '#ECA1CF', /* women */
-                               ])					   
+                      .colors(['#58595B', /* boys */
+                               '#888888', /* girls */
+                               '#AAAAAA', /* men*/
+							   '#DDDDDD', /* women */
+                               ])
                        .colorDomain([0,4])
                        .renderLabel(true)
                        .colorAccessor(function(d, i){return i%4;})
@@ -417,10 +417,10 @@
                        .dimension(cf.poptype)
                        .group(poptypeByTotal)
                        .innerRadius(10)
-                       .colors(['#d44e5b',
-                               '#AA0055', 
-                               '#E5959D', 
-                               ])	
+                      .colors(['#58595B', 
+                               '#888888', 
+                               '#AAAAAA', 
+                               ])					 
                        .colorDomain([0,4])
                        .renderLabel(true)
                        .colorAccessor(function(d, i){return i%4;})
@@ -436,7 +436,7 @@
                        .elasticX(true)
                        .on("filtered", getFiltersValues)
                        .data(function(group) { return group.top(100); })
-                       .colors(['#d44e5b'])
+                       .colors(['#58595b'])
                        .colorDomain([0,0])
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
@@ -450,7 +450,7 @@
                        .elasticX(true)
                        .on("filtered", getFiltersValues)
                        .data(function(group) { return group.top(6); })
-                       .colors(['#d44e5b'])
+                        .colors(['#58595b'])
                        .colorDomain([0,0])
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
@@ -464,7 +464,7 @@
                        .elasticX(false)
                        .on("filtered", getFiltersValues)
                        .data(function(group) { return group.top(4); })
-                       .colors(['#d44e5b'])
+                       .colors(['#58595b'])
                        .colorDomain([0,0])
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
@@ -479,7 +479,7 @@
                        .elasticX(true)
                        .on("filtered", getFiltersValues)
                        .data(function(group) { return group.top(100); })
-                       .colors(['#d44e5b'])
+                       .colors(['#58595b'])
                        .colorDomain([0,0])
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
@@ -493,7 +493,7 @@
                        .elasticX(true)
                        .on("filtered", getFiltersValues)
                        .data(function(group) { return group.top(100); })
-                       .colors(['#d44e5b'])
+                       .colors(['#58595b'])
                        .colorDomain([0,0])
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
@@ -509,7 +509,7 @@
                        .elasticX(true)
                        .on("filtered", getFiltersValues)
                        .data(function(group) { return group.top(200); })
-                       .colors(['#d44e5b'])
+                        .colors(['#58595b'])
                        .colorDomain([0,0])
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
@@ -547,7 +547,7 @@
                        .margins({top: 0, right: 50, bottom: 20, left: 60})
                        .dimension(cf.month)
                        .group(monthByTotal)
-                       .colors(['#d44e5b'])
+                        .colors(['#58595b'])
                        .gap(1)
                        .x(d3.time.scale().domain([new Date(2016, 0, 1), new Date(2016, 11, 31)]))
                        .xUnits(d3.time.months)
@@ -562,7 +562,7 @@
                         .transitionDuration(500)
                         .dimension(cf.region)
                         .group(regionByTotal)
-                        .colors(['#d44e5b'])
+                      .colors(['#58595b'])
                         .colorDomain([0, 0])
                         .colorAccessor(function(d, i){return 1;})
                         .title(function(d) { return "region: " + d.key + "\nTotal:" + d.value;})
