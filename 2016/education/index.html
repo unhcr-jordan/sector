@@ -528,7 +528,7 @@
                        .dimension(cf.month)
                        .mouseZoomable(true)
                        .rangeChart(monthrange_chart)
-                       .x(d3.time.scale().domain([new Date(2016, 0, 1), new Date(2016, 11, 31)]))
+                       .x(d3.time.scale().domain([new Date(2016, 1, 1), new Date(2016, 12, 31)]))
                        .xUnits(d3.time.months)
         //.elasticY(true)
                        .renderHorizontalGridLines(true)
@@ -548,7 +548,7 @@
                        .group(monthByTotal)
                        .colors(['#d44e5b'])
                        .gap(1)
-                       .x(d3.time.scale().domain([new Date(2016, 0, 1), new Date(2016, 11, 31)]))
+                       .x(d3.time.scale().domain([new Date(2016, 1, 1), new Date(2016, 12, 31)]))
                        .xUnits(d3.time.months)
                        .yAxis().ticks(0);
 
